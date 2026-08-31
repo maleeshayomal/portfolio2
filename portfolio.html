@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yomal Hettiarachchi - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#e0e3e5",
+                        "primary-fixed": "#d8e2ff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#d4e3ff",
+                        "surface-tint": "#adc6ff",
+                        "secondary": "#4cd7f6",
+                        "tertiary-container": "#4c93e7",
+                        "primary-container": "#4d8eff",
+                        "surface-container-high": "#272a2c",
+                        "error": "#ffb4ab",
+                        "on-primary": "#002e6a",
+                        "surface-container-highest": "#323537",
+                        "on-secondary-container": "#00424e",
+                        "on-secondary": "#003640",
+                        "surface-variant": "#323537",
+                        "background": "#101415",
+                        "secondary-fixed": "#acedff",
+                        "on-tertiary-container": "#002a51",
+                        "surface-container": "#1d2022",
+                        "on-background": "#e0e3e5",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004883",
+                        "surface-bright": "#363a3b",
+                        "surface": "#101415",
+                        "inverse-primary": "#005ac2",
+                        "secondary-container": "#03b5d3",
+                        "on-primary-fixed": "#001a42",
+                        "surface-dim": "#101415",
+                        "on-tertiary": "#00315d",
+                        "on-primary-container": "#00285d",
+                        "surface-container-lowest": "#0b0f10",
+                        "tertiary-fixed-dim": "#a4c9ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "primary": "#adc6ff",
+                        "outline-variant": "#424754",
+                        "error-container": "#93000a",
+                        "on-surface": "#e0e3e5",
+                        "surface-container-low": "#191c1e",
+                        "on-surface-variant": "#c2c6d6",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "tertiary": "#a4c9ff",
+                        "outline": "#8c909f",
+                        "inverse-on-surface": "#2d3133",
+                        "on-tertiary-fixed": "#001c39",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-secondary-fixed": "#001f26"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        base: "8px",
+                        "card-padding": "32px",
+                        "section-gap-mobile": "64px",
+                        "section-gap": "120px",
+                        "container-max": "1200px",
+                        gutter: "24px"
+                    },
+                    fontFamily: {
+                        "display-lg-mobile": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Sora"],
+                        "display-lg": ["Sora"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-lg-mobile": ["48px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "headline-lg": ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "code-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-xl": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #050816; color: #e0e3e5; }
+        .glass-card { background: rgba(13, 22, 48, 0.7); backdrop-filter: blur(12px); border: 1px solid #1E293B; }
+        .glass-card:hover { border-color: #adc6ff; box-shadow: 0 0 20px rgba(77, 142, 255, 0.1); }
+        .primary-gradient-text { background: linear-gradient(90deg, #adc6ff 0%, #4cd7f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-primary { background: linear-gradient(90deg, #4d8eff 0%, #03b5d3 100%); color: white; border: none; }
+        .btn-primary:hover { box-shadow: inset 0 0 10px rgba(255,255,255,0.3); }
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* Fluid type: scale smoothly across every viewport instead of jumping only at md */
+        .fluid-display { font-size: clamp(2.25rem, 5.5vw + 1rem, 4.5rem); }
+        .fluid-headline-xl { font-size: clamp(1.75rem, 4vw + 0.75rem, 3rem); }
+
+        /* Keep content clear of the fixed bottom nav on small screens */
+        @media (max-width: 767px) {
+            main { padding-bottom: 96px; }
+        }
+
+        /* Prevent horizontal scroll from any fixed-width child on narrow screens */
+        img, canvas, svg { max-width: 100%; }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-[#050816] min-h-screen relative overflow-x-hidden">
+<!-- Background Shader -->
+<div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+<!-- STITCH_SHADER_START:ANIMATION_1 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_1" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_1');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+float network(vec2 p) {
+    vec2 grid = fract(p * 5.0) - 0.5;
+    float line = smoothstep(0.02, 0.0, abs(grid.x)) + smoothstep(0.02, 0.0, abs(grid.y));
+    return line * 0.1;
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = (uv - 0.5) * 2.0;
+    p.x *= u_resolution.x / u_resolution.y;
+
+    // Deep background
+    vec3 color = vec3(0.02, 0.03, 0.08); // #050816 approx
+
+    // Subtle blue glow in center
+    float glow = exp(-length(p) * 1.5);
+    color += vec3(0.23, 0.51, 0.96) * glow * 0.15; // #3B82F6 approx
+
+    // Moving grid / nodes effect
+    vec2 shiftUv = uv + vec2(u_time * 0.01, u_time * 0.005);
+    float lines = network(shiftUv);
+    color += vec3(0.02, 0.71, 0.83) * lines; // #06B6D4 approx
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_1 -->
+</div>
+<!-- Navigation -->
+<nav class="hidden lg:flex fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-container-max rounded-full bg-surface/70 backdrop-blur-xl border border-outline-variant shadow-2xl z-50 justify-between items-center px-gutter py-4">
+<div class="font-headline-lg text-headline-lg font-extrabold tracking-tighter text-on-surface flex items-center gap-2 shrink-0">
+            YOMAL. <span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span>
+</div>
+<div class="flex gap-5 xl:gap-6">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#about">About</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#skills">Skills</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#projects">Projects</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#experience">Experience</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#contact">Contact</a>
+</div>
+<button class="btn-primary px-5 xl:px-6 py-2 rounded-full font-label-caps text-label-caps transition-all shrink-0 whitespace-nowrap">Let's Connect</button>
+</nav>
+<!-- Compact top bar for mobile/tablet (logo + connect button; links live in bottom nav) -->
+<nav class="lg:hidden fixed top-0 left-0 w-full bg-surface/90 backdrop-blur-xl border-b border-outline-variant z-50 flex justify-between items-center px-gutter py-4">
+<div class="font-headline-lg text-headline-lg font-extrabold tracking-tighter text-on-surface flex items-center gap-2 text-[22px]">
+            YOMAL. <span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span>
+</div>
+<a class="btn-primary px-4 py-2 rounded-full font-label-caps text-label-caps transition-all text-[11px]" href="#contact">Let's Connect</a>
+</nav>
+<!-- Mobile/Tablet Nav (Bottom) -->
+<nav class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-xl border-t border-outline-variant z-50 lg:hidden flex justify-around py-3 px-2 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+<a class="flex flex-col items-center text-on-surface-variant" href="#about">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] mt-1">About</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#projects">
+<span class="material-symbols-outlined text-[24px]">work</span>
+<span class="text-[10px] mt-1">Projects</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#contact">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+<span class="text-[10px] mt-1">Contact</span>
+</a>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter pt-24 md:pt-28 lg:pt-32 pb-section-gap-mobile lg:pb-section-gap">
+<!-- Hero Section -->
+<section class="min-h-0 py-8 md:py-0 md:min-h-[600px] lg:min-h-[819px] flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12 mb-section-gap-mobile lg:mb-section-gap relative fade-up">
+<!-- Radial Glow behind Hero -->
+<div class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-primary-container rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
+<div class="md:w-1/2 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-outline-variant bg-surface-variant/30 mb-6">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Open to Opportunities</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg fluid-display text-on-surface mb-6 leading-tight">
+                    Building Digital Solutions.<br/>
+<span class="primary-gradient-text">Exploring What's Next.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+                    Software Engineering | Cloud Infrastructure | Cybersecurity enthusiast. Transforming complex problems into elegant, scalable systems.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="btn-primary px-8 py-4 rounded-lg font-label-caps text-label-caps transition-all text-center" href="#projects">View Projects</a>
+<a class="px-8 py-4 rounded-lg font-label-caps text-label-caps border border-outline-variant hover:border-primary text-on-surface transition-all flex items-center justify-center gap-2" href="#contact">
+                        Contact Me <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:w-1/2 h-[300px] sm:h-[380px] md:h-[500px] relative w-full rounded-2xl overflow-hidden border border-outline-variant glass-card">
+<!-- STITCH_THREEJS_START:ANIMATION_2 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_2" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_2');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+container.appendChild(renderer.domElement);
+
+const group = new THREE.Group();
+scene.add(group);
+
+// Central Node
+const centerGeo = new THREE.SphereGeometry(0.5, 32, 32);
+const centerMat = new THREE.MeshPhongMaterial({ color: 0x3B82F6, emissive: 0x3B82F6, emissiveIntensity: 2 });
+const centerNode = new THREE.Mesh(centerGeo, centerMat);
+group.add(centerNode);
+
+// Satellite Nodes
+const techNames = ['AWS', 'React', 'Node.js', 'Java', 'Python', 'MySQL', 'Cyber', 'AI'];
+const nodes = [];
+const radius = 3.5;
+
+techNames.forEach((name, i) => {
+    const angle = (i / techNames.length) * Math.PI * 2;
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius;
+    
+    const nodeGeo = new THREE.SphereGeometry(0.15, 16, 16);
+    const nodeMat = new THREE.MeshPhongMaterial({ 
+        color: i % 2 === 0 ? 0x06B6D4 : 0x3B82F6,
+        emissive: i % 2 === 0 ? 0x06B6D4 : 0x3B82F6,
+        emissiveIntensity: 1
+    });
+    const node = new THREE.Mesh(nodeGeo, nodeMat);
+    node.position.set(x, y, 0);
+    group.add(node);
+    nodes.push(node);
+
+    // Connection Line
+    const points = [new THREE.Vector3(0,0,0), new THREE.Vector3(x,y,0)];
+    const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+    const lineMat = new THREE.LineBasicMaterial({ color: 0x3B82F6, transparent: true, opacity: 0.2 });
+    const line = new THREE.Line(lineGeo, lineMat);
+    group.add(line);
+});
+
+const light = new THREE.PointLight(0xffffff, 1, 100);
+light.position.set(5, 5, 5);
+scene.add(light);
+scene.add(new THREE.AmbientLight(0x404040));
+
+camera.position.z = 8;
+
+function animate() {
+    requestAnimationFrame(animate);
+    group.rotation.z += 0.002;
+    group.rotation.y += 0.001;
+    
+    nodes.forEach((node, i) => {
+        const time = Date.now() * 0.001;
+        node.position.z = Math.sin(time + i) * 0.5;
+    });
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_2 -->
+</div>
+</section>
+<!-- About Section -->
+<section class="mb-section-gap-mobile lg:mb-section-gap fade-up scroll-mt-32" id="about">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-xl text-headline-xl mb-6 primary-gradient-text">Curious by nature. Builder by choice.</h2>
+<p class="text-on-surface-variant mb-6">
+                        I am a software engineering undergraduate at General Sir John Kotelawala Defence University, passionate about full-stack development, cloud computing, and AI-driven solutions.
+                    </p>
+<p class="text-on-surface-variant">
+                        My approach blends rigorous engineering principles with an eye for user experience. I thrive in environments that challenge me to learn new technologies and apply them to real-world problems.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-card p-6 rounded-xl text-center">
+<div class="font-headline-lg text-headline-lg text-primary mb-2">3+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Years Coding</div>
+</div>
+<div class="glass-card p-6 rounded-xl text-center">
+<div class="font-headline-lg text-headline-lg text-primary mb-2">15+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Projects Built</div>
+</div>
+<div class="glass-card p-6 rounded-xl text-center col-span-2">
+<div class="font-headline-lg text-headline-lg text-primary mb-2">Continuous</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Learner</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Skills -->
+<section class="mb-section-gap-mobile lg:mb-section-gap fade-up scroll-mt-32" id="skills">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12 text-center">Technical Ecosystem</h2>
+<div class="grid md:grid-cols-3 gap-6">
+<!-- Frontend -->
+<div class="glass-card p-card-padding rounded-2xl transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-[32px] text-primary">desktop_windows</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface text-[24px]">Frontend</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded bg-primary/10 text-primary font-code-sm text-code-sm">React</span>
+<span class="px-3 py-1 rounded bg-primary/10 text-primary font-code-sm text-code-sm">HTML/CSS</span>
+<span class="px-3 py-1 rounded bg-primary/10 text-primary font-code-sm text-code-sm">JavaScript</span>
+<span class="px-3 py-1 rounded bg-primary/10 text-primary font-code-sm text-code-sm">Tailwind CSS</span>
+</div>
+</div>
+<!-- Backend -->
+<div class="glass-card p-card-padding rounded-2xl transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-[32px] text-secondary">database</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface text-[24px]">Backend</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded bg-secondary/10 text-secondary font-code-sm text-code-sm">Node.js</span>
+<span class="px-3 py-1 rounded bg-secondary/10 text-secondary font-code-sm text-code-sm">Python</span>
+<span class="px-3 py-1 rounded bg-secondary/10 text-secondary font-code-sm text-code-sm">Java</span>
+<span class="px-3 py-1 rounded bg-secondary/10 text-secondary font-code-sm text-code-sm">MySQL</span>
+</div>
+</div>
+<!-- Tools -->
+<div class="glass-card p-card-padding rounded-2xl transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-[32px] text-tertiary">build</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface text-[24px]">Tools &amp; Cloud</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded bg-tertiary/10 text-tertiary font-code-sm text-code-sm">Git</span>
+<span class="px-3 py-1 rounded bg-tertiary/10 text-tertiary font-code-sm text-code-sm">Docker</span>
+<span class="px-3 py-1 rounded bg-tertiary/10 text-tertiary font-code-sm text-code-sm">AWS</span>
+<span class="px-3 py-1 rounded bg-tertiary/10 text-tertiary font-code-sm text-code-sm">Figma</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32" id="projects">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12 text-center fade-up">Featured Engineering</h2>
+<div class="flex flex-col gap-16">
+<!-- Project 1 -->
+<div class="grid md:grid-cols-2 gap-8 items-center glass-card p-4 md:p-8 rounded-2xl fade-up">
+<div class="order-2 md:order-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Badminton Court Booking System</h3>
+<p class="text-on-surface-variant mb-6">A comprehensive full-stack solution for managing court reservations, featuring real-time availability, secure payments, and administrative dashboards.</p>
+<div class="mb-6">
+<h4 class="font-label-caps text-label-caps text-primary mb-2">Tech Stack</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded bg-outline-variant/30 text-on-surface font-code-sm text-code-sm border border-outline-variant">React</span>
+<span class="px-3 py-1 rounded bg-outline-variant/30 text-on-surface font-code-sm text-code-sm border border-outline-variant">Node.js</span>
+<span class="px-3 py-1 rounded bg-outline-variant/30 text-on-surface font-code-sm text-code-sm border border-outline-variant">MySQL</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors" href="#">
+<span class="font-label-caps text-label-caps">View Source</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="order-1 md:order-2 rounded-xl overflow-hidden border border-outline-variant h-64 md:h-80 relative group">
+<img alt="Project 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A futuristic digital interface showing a calendar scheduling system with neon blue and cyan accents on a dark metallic background, highly detailed UI design, sleek modern aesthetic, studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApxtGU7y3nQWW91BLttWVRn-a7UX2DZvwv_mEJSVf9l-lemM8kQQ8ziAJPuEiPACj_EDFpaWDvB--fzCjUHorVQN1EyGVUWdtQXXdMPRkVmw3Nh0TOfOv4qF2Caqkvfw9Vi3wNEtjwCdx0dhuiUY45WjL8Kd1Z0ILaI6jhHos8-ItAu2PRRgbG6BrfAg9FQNxrn7kmxosCMZkQ8fjAtBSiTsOZFeGjkVCvLXMvKR6zxCX_IHER0ys52A"/>
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="grid md:grid-cols-2 gap-8 items-center glass-card p-4 md:p-8 rounded-2xl fade-up">
+<div class="rounded-xl overflow-hidden border border-outline-variant h-64 md:h-80 relative group">
+<img alt="Project 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A complex network data visualization depicting artificial intelligence processing nodes in deep dark blue and red, resembling a machine learning neural network, high contrast tech environment, glowing lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1p1ETTmeSjJpi-rRyFud42bpMlkvo6wwpQ0kAkTre1A09VxOF-wQyHoXGLFjPj_tUacgIs3_uGOKi9EqYTQ022ROKp6dLvabTPxgeShR_8uJZgHUuieF3NIdjgvAtQxoK24v1rFF7BE7wBOEOVVu0qj4SBtZ5zgnNp5GG9APVQG2b1QGrfYOwJjSR9OfnuyDQx3DZYrKUlehDKk77p8NSDT2E18f0RRvF1JF0NBPLUcMjS24-MHBYkw"/>
+<div class="absolute inset-0 bg-secondary-container/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">AI Blood Donor Recommendation</h3>
+<p class="text-on-surface-variant mb-6">A machine learning model designed to optimize the matching of blood donors with recipients based on geographical, historical, and health data to minimize emergency wait times.</p>
+<div class="mb-6">
+<h4 class="font-label-caps text-label-caps text-secondary mb-2">Tech Stack</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded bg-outline-variant/30 text-on-surface font-code-sm text-code-sm border border-outline-variant">Python</span>
+<span class="px-3 py-1 rounded bg-outline-variant/30 text-on-surface font-code-sm text-code-sm border border-outline-variant">Scikit-Learn</span>
+<span class="px-3 py-1 rounded bg-outline-variant/30 text-on-surface font-code-sm text-code-sm border border-outline-variant">Pandas</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors" href="#">
+<span class="font-label-caps text-label-caps">View Source</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Currently Exploring -->
+<section class="mb-section-gap-mobile lg:mb-section-gap fade-up">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Currently Exploring</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-radial from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-[40px] text-primary relative z-10">cloud</span>
+<span class="font-label-caps text-label-caps text-on-surface relative z-10">Cloud Arch</span>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-radial from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-[40px] text-secondary relative z-10">security</span>
+<span class="font-label-caps text-label-caps text-on-surface relative z-10">Cybersecurity</span>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-radial from-tertiary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-[40px] text-tertiary relative z-10">smart_toy</span>
+<span class="font-label-caps text-label-caps text-on-surface relative z-10">Applied AI</span>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-radial from-primary-container/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-[40px] text-primary-container relative z-10">terminal</span>
+<span class="font-label-caps text-label-caps text-on-surface relative z-10">System Design</span>
+</div>
+</div>
+</section>
+<!-- Career Vision -->
+<section class="mb-section-gap-mobile lg:mb-section-gap py-14 md:py-20 text-center relative fade-up">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg fluid-display mb-6 max-w-4xl mx-auto primary-gradient-text leading-tight">
+                From learning technology to engineering solutions.
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                My goal is to build robust, scalable applications that solve real problems while maintaining the highest standards of security and performance.
+            </p>
+</section>
+<!-- Contact Section -->
+<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32 fade-up" id="contact">
+<div class="max-w-2xl mx-auto glass-card p-6 sm:p-8 md:p-12 rounded-3xl relative overflow-hidden">
+<div class="absolute -top-32 -right-32 w-64 h-64 bg-primary/20 rounded-full blur-[80px]"></div>
+<h2 class="font-headline-xl text-headline-xl fluid-headline-xl text-on-surface mb-4 relative z-10">Have an idea?<br/>Let's build something.</h2>
+<p class="text-on-surface-variant mb-8 relative z-10">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+<form class="flex flex-col gap-6 relative z-10">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Name</label>
+<input class="w-full bg-[#050816] border border-outline-variant rounded-lg p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-[0_0_0_0_rgba(77,142,255,0)] focus:shadow-[0_0_10px_2px_rgba(77,142,255,0.2)]" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Email</label>
+<input class="w-full bg-[#050816] border border-outline-variant rounded-lg p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-[0_0_0_0_rgba(77,142,255,0)] focus:shadow-[0_0_10px_2px_rgba(77,142,255,0.2)]" type="email"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Message</label>
+<textarea class="w-full bg-[#050816] border border-outline-variant rounded-lg p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-[0_0_0_0_rgba(77,142,255,0)] focus:shadow-[0_0_10px_2px_rgba(77,142,255,0.2)]" rows="4"></textarea>
+</div>
+<button class="btn-primary py-4 rounded-lg font-label-caps text-label-caps font-bold tracking-widest mt-2 flex justify-center items-center gap-2" type="button">
+                        SEND MESSAGE <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap-mobile md:py-section-gap border-t border-outline-variant bg-background">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-base">
+<div class="font-headline-lg text-headline-lg text-primary">YOMAL.</div>
+<div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Source Code</a>
+</div>
+<div class="text-on-surface-variant font-body-md text-body-md text-sm mt-4 md:mt-0">
+                © 2024 Yomal Hettiarachchi. Built with precision.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for fade-up animation
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body></html>
