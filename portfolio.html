@@ -113,6 +113,116 @@
         .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+        /* Custom Glowing & Glass Effect Classes */
+        .glow-card-blue {
+            background: rgba(13, 22, 48, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-card-blue:hover {
+            border-color: #3B82F6;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.35), inset 0 0 15px rgba(59, 130, 246, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .glow-card-cyan {
+            background: rgba(13, 22, 48, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-card-cyan:hover {
+            border-color: #06B6D4;
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.35), inset 0 0 15px rgba(6, 182, 212, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .glow-card-gradient {
+            background: rgba(13, 22, 48, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(96, 165, 250, 0.25);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-card-gradient:hover {
+            border-color: #38BDF8;
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.25), 0 0 35px rgba(6, 182, 212, 0.25), inset 0 0 15px rgba(56, 189, 248, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .glow-card-light-blue {
+            background: rgba(13, 22, 48, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(173, 198, 255, 0.25);
+            box-shadow: 0 0 20px rgba(173, 198, 255, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-card-light-blue:hover {
+            border-color: #ADC6FF;
+            box-shadow: 0 0 30px rgba(173, 198, 255, 0.35), inset 0 0 15px rgba(173, 198, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* Career Vision Gradient Text: #F8FAFC -> #60A5FA -> #06B6D4 */
+        .career-gradient-title {
+            background: linear-gradient(135deg, #F8FAFC 0%, #60A5FA 50%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Contact Gradient Text: White & Cyan */
+        .contact-gradient-title {
+            background: linear-gradient(135deg, #FFFFFF 0%, #ADC6FF 40%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animated Pipeline Sequence Gradient */
+        .sequence-gradient-text {
+            background: linear-gradient(90deg, #3B82F6 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Form Input */
+        .custom-glass-input {
+            background-color: #0D1630 !important;
+            border: 1px solid #1E293B !important;
+            color: #F8FAFC !important;
+            transition: all 0.3s ease;
+        }
+        .custom-glass-input:focus {
+            border-color: #3B82F6 !important;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.35) !important;
+            outline: none !important;
+        }
+
+        /* Stepper pulse beam animation */
+        @keyframes beamFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+        .animate-beam-flow {
+            animation: beamFlow 3.5s infinite linear;
+        }
+
+        /* Contribution grid squares */
+        .contrib-square {
+            width: 13px;
+            height: 13px;
+            border-radius: 2.5px;
+            transition: transform 0.15s ease, filter 0.15s ease;
+            cursor: pointer;
+        }
+        .contrib-square:hover {
+            transform: scale(1.4);
+            filter: brightness(1.3) drop-shadow(0 0 5px #38BDF8);
+            z-index: 20;
+        }
+
         /* Fluid type: scale smoothly across every viewport instead of jumping only at md */
         .fluid-display { font-size: clamp(2.25rem, 5.5vw + 1rem, 4.5rem); }
         .fluid-headline-xl { font-size: clamp(1.75rem, 4vw + 0.75rem, 3rem); }
@@ -243,14 +353,16 @@ void main() {
 <div class="font-headline-lg text-headline-lg font-extrabold tracking-tighter text-on-surface flex items-center gap-2 shrink-0">
             YOMAL. <span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span>
 </div>
-<div class="flex gap-5 xl:gap-6">
+<div class="flex gap-4 xl:gap-6">
 <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#about">About</a>
 <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#skills">Skills</a>
 <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#projects">Projects</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#experience">Experience</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#exploring">Exploring</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#education">Education</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#certifications">Certifications</a>
 <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps whitespace-nowrap" href="#contact">Contact</a>
 </div>
-<button class="btn-primary px-5 xl:px-6 py-2 rounded-full font-label-caps text-label-caps transition-all shrink-0 whitespace-nowrap">Let's Connect</button>
+<a href="#contact" class="btn-primary px-5 xl:px-6 py-2 rounded-full font-label-caps text-label-caps transition-all shrink-0 whitespace-nowrap inline-block text-center">Let's Connect</a>
 </nav>
 <!-- Compact top bar for mobile/tablet (logo + connect button; links live in bottom nav) -->
 <nav class="lg:hidden fixed top-0 left-0 w-full bg-surface/90 backdrop-blur-xl border-b border-outline-variant z-50 flex justify-between items-center px-gutter py-4">
@@ -261,15 +373,23 @@ void main() {
 </nav>
 <!-- Mobile/Tablet Nav (Bottom) -->
 <nav class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-xl border-t border-outline-variant z-50 lg:hidden flex justify-around py-3 px-2 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
-<a class="flex flex-col items-center text-on-surface-variant" href="#about">
+<a class="flex flex-col items-center text-on-surface-variant hover:text-primary" href="#about">
 <span class="material-symbols-outlined text-[24px]">person</span>
 <span class="text-[10px] mt-1">About</span>
 </a>
-<a class="flex flex-col items-center text-on-surface-variant" href="#projects">
+<a class="flex flex-col items-center text-on-surface-variant hover:text-primary" href="#skills">
+<span class="material-symbols-outlined text-[24px]">code</span>
+<span class="text-[10px] mt-1">Skills</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant hover:text-primary" href="#projects">
 <span class="material-symbols-outlined text-[24px]">work</span>
 <span class="text-[10px] mt-1">Projects</span>
 </a>
-<a class="flex flex-col items-center text-on-surface-variant" href="#contact">
+<a class="flex flex-col items-center text-on-surface-variant hover:text-primary" href="#exploring">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="text-[10px] mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant hover:text-primary" href="#contact">
 <span class="material-symbols-outlined text-[24px]">mail</span>
 <span class="text-[10px] mt-1">Contact</span>
 </a>
@@ -514,94 +634,662 @@ animate();
 </div>
 </div>
 </section>
-<!-- Currently Exploring -->
-<section class="mb-section-gap-mobile lg:mb-section-gap fade-up">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Currently Exploring</h2>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
-<div class="absolute inset-0 bg-gradient-radial from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<span class="material-symbols-outlined text-[40px] text-primary relative z-10">cloud</span>
-<span class="font-label-caps text-label-caps text-on-surface relative z-10">Cloud Arch</span>
-</div>
-<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
-<div class="absolute inset-0 bg-gradient-radial from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<span class="material-symbols-outlined text-[40px] text-secondary relative z-10">security</span>
-<span class="font-label-caps text-label-caps text-on-surface relative z-10">Cybersecurity</span>
-</div>
-<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
-<div class="absolute inset-0 bg-gradient-radial from-tertiary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<span class="material-symbols-outlined text-[40px] text-tertiary relative z-10">smart_toy</span>
-<span class="font-label-caps text-label-caps text-on-surface relative z-10">Applied AI</span>
-</div>
-<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-3 relative overflow-hidden group">
-<div class="absolute inset-0 bg-gradient-radial from-primary-container/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<span class="material-symbols-outlined text-[40px] text-primary-container relative z-10">terminal</span>
-<span class="font-label-caps text-label-caps text-on-surface relative z-10">System Design</span>
-</div>
-</div>
+<!-- ================= ☁️ CURRENTLY EXPLORING ================= -->
+<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32 fade-up" id="exploring">
+    <!-- Header -->
+    <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/30 backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+            <span class="text-base">☁️</span>
+            <span class="font-code-sm text-code-sm font-semibold tracking-wider text-cyan-300 uppercase">Currently Exploring</span>
+        </div>
+        <h2 class="font-headline-xl text-headline-xl fluid-headline-xl text-on-surface font-bold tracking-tight">Currently Exploring</h2>
+        <p class="text-on-surface-variant max-w-2xl mx-auto mt-3 text-sm md:text-base">
+            Actively expanding engineering horizons across next-generation cloud architecture, security, intelligence, and modern system design.
+        </p>
+    </div>
+
+    <!-- Animated Sequence: LEARN → BUILD → EXPERIMENT → IMPROVE -->
+    <div class="mb-12 max-w-4xl mx-auto p-4 sm:p-5 rounded-2xl border border-blue-500/20 bg-gradient-to-r from-blue-950/40 via-[#0A1024]/90 to-cyan-950/40 backdrop-blur-xl relative overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent w-1/2 h-full animate-beam-flow pointer-events-none"></div>
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-6 font-extrabold text-xs sm:text-sm md:text-base relative z-10">
+            <div class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl bg-[#0D1630]/90 border border-blue-500/30 shadow-[0_0_12px_rgba(59,130,246,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-[#3B82F6] animate-ping"></span>
+                <span class="sequence-gradient-text font-black tracking-wider">LEARN</span>
+            </div>
+            <span class="text-[#06B6D4] font-bold text-lg sm:text-xl animate-pulse">→</span>
+            <div class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl bg-[#0D1630]/90 border border-cyan-500/30 shadow-[0_0_12px_rgba(6,182,212,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-[#06B6D4] animate-ping"></span>
+                <span class="sequence-gradient-text font-black tracking-wider">BUILD</span>
+            </div>
+            <span class="text-[#06B6D4] font-bold text-lg sm:text-xl animate-pulse">→</span>
+            <div class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl bg-[#0D1630]/90 border border-blue-400/30 shadow-[0_0_12px_rgba(59,130,246,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-[#60A5FA] animate-ping"></span>
+                <span class="sequence-gradient-text font-black tracking-wider">EXPERIMENT</span>
+            </div>
+            <span class="text-[#06B6D4] font-bold text-lg sm:text-xl animate-pulse">→</span>
+            <div class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl bg-[#0D1630]/90 border border-cyan-400/30 shadow-[0_0_12px_rgba(6,182,212,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-[#38BDF8] animate-ping"></span>
+                <span class="sequence-gradient-text font-black tracking-wider">IMPROVE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 Premium Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1: CLOUD ENGINEERING (Blue glow) -->
+        <div class="glow-card-blue p-6 rounded-2xl flex flex-col justify-between group">
+            <div>
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(59,130,246,0.25)] group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[28px] text-[#3B82F6]">cloud</span>
+                </div>
+                <h3 class="font-headline-lg text-lg font-bold text-white tracking-wide mb-4 flex items-center justify-between">
+                    CLOUD ENGINEERING
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6] shadow-[0_0_8px_#3B82F6]"></span>
+                </h3>
+                <div class="space-y-2.5">
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        <span class="font-medium">AWS</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        <span class="font-medium">Cloud Infrastructure</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        <span class="font-medium">Deployment</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        <span class="font-medium">Scalable Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-blue-500/10 flex items-center justify-between text-xs text-blue-400 font-code-sm">
+                <span>Infrastructure Focus</span>
+                <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+        </div>
+
+        <!-- Card 2: CYBERSECURITY (Cyan glow) -->
+        <div class="glow-card-cyan p-6 rounded-2xl flex flex-col justify-between group">
+            <div>
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(6,182,212,0.25)] group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[28px] text-[#06B6D4]">shield</span>
+                </div>
+                <h3 class="font-headline-lg text-lg font-bold text-white tracking-wide mb-4 flex items-center justify-between">
+                    CYBERSECURITY
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_#06B6D4]"></span>
+                </h3>
+                <div class="space-y-2.5">
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                        <span class="font-medium">Linux</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                        <span class="font-medium">Networking</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                        <span class="font-medium">Security Fundamentals</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                        <span class="font-medium">Secure Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-cyan-500/10 flex items-center justify-between text-xs text-cyan-400 font-code-sm">
+                <span>Security Focus</span>
+                <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+        </div>
+
+        <!-- Card 3: ARTIFICIAL INTELLIGENCE (Blue/Cyan Gradient) -->
+        <div class="glow-card-gradient p-6 rounded-2xl flex flex-col justify-between group">
+            <div>
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-cyan-400/40 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(56,189,248,0.25)] group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[28px] text-[#38BDF8]">psychology</span>
+                </div>
+                <h3 class="font-headline-lg text-lg font-bold text-white tracking-wide mb-4 flex items-center justify-between">
+                    ARTIFICIAL INTELLIGENCE
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#38BDF8] shadow-[0_0_8px_#38BDF8]"></span>
+                </h3>
+                <div class="space-y-2.5">
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                        <span class="font-medium">Machine Learning</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                        <span class="font-medium">AI Applications</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"></span>
+                        <span class="font-medium">Data Processing</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-sky-500/10 flex items-center justify-between text-xs text-sky-400 font-code-sm">
+                <span>Intelligence Focus</span>
+                <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+        </div>
+
+        <!-- Card 4: SOFTWARE ENGINEERING (Light-blue accent) -->
+        <div class="glow-card-light-blue p-6 rounded-2xl flex flex-col justify-between group">
+            <div>
+                <div class="w-12 h-12 rounded-xl bg-[#ADC6FF]/10 border border-[#ADC6FF]/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(173,198,255,0.25)] group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[28px] text-[#ADC6FF]">code_blocks</span>
+                </div>
+                <h3 class="font-headline-lg text-lg font-bold text-white tracking-wide mb-4 flex items-center justify-between">
+                    SOFTWARE ENGINEERING
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#ADC6FF] shadow-[0_0_8px_#ADC6FF]"></span>
+                </h3>
+                <div class="space-y-2.5">
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#ADC6FF]"></span>
+                        <span class="font-medium">Full-Stack Development</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#ADC6FF]"></span>
+                        <span class="font-medium">Backend Architecture</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm text-slate-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#ADC6FF]"></span>
+                        <span class="font-medium">Database Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-indigo-500/10 flex items-center justify-between text-xs text-[#ADC6FF] font-code-sm">
+                <span>Architecture Focus</span>
+                <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- Career Vision -->
-<section class="mb-section-gap-mobile lg:mb-section-gap py-14 md:py-20 text-center relative fade-up">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
-<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg fluid-display mb-6 max-w-4xl mx-auto primary-gradient-text leading-tight">
-                From learning technology to engineering solutions.
-            </h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                My goal is to build robust, scalable applications that solve real problems while maintaining the highest standards of security and performance.
+
+<!-- ================= 🎓 EDUCATION ================= -->
+<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32 fade-up" id="education">
+    <div class="bg-[#0A1024] border border-[#1E293B] rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden shadow-[0_0_40px_rgba(10,16,36,0.8)]">
+        <!-- Radial glow background -->
+        <div class="absolute -top-24 -right-24 w-80 h-80 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <!-- Section Header -->
+        <div class="mb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+                <span class="text-base">🎓</span>
+                <span class="font-code-sm text-code-sm font-semibold tracking-wider text-blue-300 uppercase">Education</span>
+            </div>
+            <h2 class="font-headline-xl text-headline-xl fluid-headline-xl text-on-surface font-bold tracking-tight">The Foundation</h2>
+            <p class="text-on-surface-variant max-w-xl mt-2 text-sm md:text-base">
+                Rigorous academic training and theoretical computer science fundamentals forming the bedrock of modern engineering.
             </p>
+        </div>
+
+        <!-- Vertical Timeline -->
+        <div class="relative pl-6 sm:pl-10 md:pl-12 border-l-2 border-[#1E293B] ml-2 sm:ml-4 space-y-12">
+            <!-- Timeline Item -->
+            <div class="relative group">
+                <!-- Glowing Point (#3B82F6) -->
+                <div class="absolute -left-[31px] sm:-left-[47px] md:-left-[55px] top-1.5 w-6 h-6 rounded-full bg-[#0A1024] border-2 border-[#3B82F6] flex items-center justify-center shadow-[0_0_15px_#3B82F6]">
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#3B82F6] animate-ping opacity-75"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#3B82F6] absolute"></div>
+                </div>
+
+                <!-- Content Card -->
+                <div class="bg-[#0D1630]/80 border border-[#1E293B] hover:border-[#3B82F6]/50 transition-all duration-300 rounded-2xl p-6 sm:p-8 backdrop-blur-xl shadow-lg">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <span class="px-3.5 py-1 rounded-full text-xs font-bold font-code-sm bg-blue-500/10 text-blue-400 border border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                            2029
+                        </span>
+                        <div class="flex items-center gap-1.5 text-xs text-on-surface-variant font-medium">
+                            <span class="material-symbols-outlined text-[16px] text-cyan-400">location_on</span>
+                            Sri Lanka
+                        </div>
+                    </div>
+
+                    <h3 class="font-headline-lg text-xl sm:text-2xl font-bold text-white mb-2">
+                        BSc (Hons) in Software Engineering
+                    </h3>
+                    <p class="text-secondary font-medium text-base mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">school</span>
+                        Sir John Kotelawala Defence University
+                    </p>
+
+                    <!-- Relevant Areas -->
+                    <div class="pt-4 border-t border-[#1E293B]">
+                        <h4 class="font-label-caps text-xs tracking-wider text-slate-400 uppercase font-semibold mb-3">Relevant areas:</h4>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-3 py-1.5 rounded-lg bg-[#050816] text-slate-200 border border-[#1E293B] hover:border-blue-500/40 text-xs sm:text-sm font-medium transition-colors">
+                                Object-Oriented Programming
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-[#050816] text-slate-200 border border-[#1E293B] hover:border-blue-500/40 text-xs sm:text-sm font-medium transition-colors">
+                                Database Systems
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-[#050816] text-slate-200 border border-[#1E293B] hover:border-blue-500/40 text-xs sm:text-sm font-medium transition-colors">
+                                Computer Networks
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-[#050816] text-slate-200 border border-[#1E293B] hover:border-blue-500/40 text-xs sm:text-sm font-medium transition-colors">
+                                Advanced Web Development
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-[#050816] text-slate-200 border border-[#1E293B] hover:border-blue-500/40 text-xs sm:text-sm font-medium transition-colors">
+                                Artificial Intelligence
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg bg-[#050816] text-slate-200 border border-[#1E293B] hover:border-blue-500/40 text-xs sm:text-sm font-medium transition-colors">
+                                Computer Architecture
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- Contact Section -->
-<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32 fade-up" id="contact">
-<div class="max-w-2xl mx-auto glass-card p-6 sm:p-8 md:p-12 rounded-3xl relative overflow-hidden">
-<div class="absolute -top-32 -right-32 w-64 h-64 bg-primary/20 rounded-full blur-[80px]"></div>
-<h2 class="font-headline-xl text-headline-xl fluid-headline-xl text-on-surface mb-4 relative z-10">Have an idea?<br/>Let's build something.</h2>
-<p class="text-on-surface-variant mb-8 relative z-10">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
-<form class="flex flex-col gap-6 relative z-10">
-<div>
-<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Name</label>
-<input class="w-full bg-[#050816] border border-outline-variant rounded-lg p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-[0_0_0_0_rgba(77,142,255,0)] focus:shadow-[0_0_10px_2px_rgba(77,142,255,0.2)]" type="text"/>
-</div>
-<div>
-<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Email</label>
-<input class="w-full bg-[#050816] border border-outline-variant rounded-lg p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-[0_0_0_0_rgba(77,142,255,0)] focus:shadow-[0_0_10px_2px_rgba(77,142,255,0.2)]" type="email"/>
-</div>
-<div>
-<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Message</label>
-<textarea class="w-full bg-[#050816] border border-outline-variant rounded-lg p-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-[0_0_0_0_rgba(77,142,255,0)] focus:shadow-[0_0_10px_2px_rgba(77,142,255,0.2)]" rows="4"></textarea>
-</div>
-<button class="btn-primary py-4 rounded-lg font-label-caps text-label-caps font-bold tracking-widest mt-2 flex justify-center items-center gap-2" type="button">
-                        SEND MESSAGE <span class="material-symbols-outlined text-[18px]">send</span>
-</button>
-</form>
-</div>
+
+<!-- ================= 📜 CERTIFICATIONS ================= -->
+<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32 fade-up" id="certifications">
+    <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+            <span class="text-base">📜</span>
+            <span class="font-code-sm text-code-sm font-semibold tracking-wider text-blue-300 uppercase">Certifications</span>
+        </div>
+        <h2 class="font-headline-xl text-headline-xl fluid-headline-xl text-on-surface font-bold tracking-tight">Learning Never Stops</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto mt-2 text-sm md:text-base">
+            Industry-recognized credentials and active learning programs reinforcing practical expertise.
+        </p>
+    </div>
+
+    <!-- 3 Elegant Certification Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Cybersecurity Essentials (Completed) -->
+        <div class="glass-card p-6 rounded-2xl border border-[#1E293B] hover:border-cyan-400 transition-all duration-300 flex flex-col justify-between relative group">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                        <span class="material-symbols-outlined text-[14px]">check_circle</span> Completed
+                    </span>
+                    <span class="text-xs font-code-sm text-slate-400 bg-[#050816] px-2.5 py-1 rounded border border-[#1E293B]">LFS151</span>
+                </div>
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-4 text-cyan-400">
+                    <span class="material-symbols-outlined text-[28px]">verified_user</span>
+                </div>
+                <h3 class="font-headline-lg text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                    Cybersecurity Essentials
+                </h3>
+                <p class="text-on-surface-variant text-sm font-medium">Linux Foundation</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#1E293B] flex items-center justify-between text-xs text-slate-400">
+                <span>Verified Linux Course</span>
+                <span class="text-cyan-400 font-bold">Linux Foundation</span>
+            </div>
+        </div>
+
+        <!-- Card 2: Introduction to Cloud Infrastructure Technologies (Completed) -->
+        <div class="glass-card p-6 rounded-2xl border border-[#1E293B] hover:border-cyan-400 transition-all duration-300 flex flex-col justify-between relative group">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                        <span class="material-symbols-outlined text-[14px]">check_circle</span> Completed
+                    </span>
+                    <span class="text-xs font-code-sm text-slate-400 bg-[#050816] px-2.5 py-1 rounded border border-[#1E293B]">Cloud</span>
+                </div>
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mb-4 text-blue-400">
+                    <span class="material-symbols-outlined text-[28px]">cloud_done</span>
+                </div>
+                <h3 class="font-headline-lg text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                    Introduction to Cloud Infrastructure Technologies
+                </h3>
+                <p class="text-on-surface-variant text-sm font-medium">Linux Foundation</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#1E293B] flex items-center justify-between text-xs text-slate-400">
+                <span>Cloud Fundamentals</span>
+                <span class="text-blue-400 font-bold">Linux Foundation</span>
+            </div>
+        </div>
+
+        <!-- Card 3: AWS Cloud (Current Learning) -->
+        <div class="bg-[#0D1630]/90 p-6 rounded-2xl border-2 border-blue-500/50 shadow-[0_0_25px_rgba(59,130,246,0.2)] hover:shadow-[0_0_35px_rgba(59,130,246,0.35)] transition-all duration-300 flex flex-col justify-between relative group">
+            <div class="absolute -top-3 right-4 px-3 py-0.5 rounded-full text-[11px] font-bold bg-blue-500 text-white shadow-[0_0_10px_#3B82F6] flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> Current Learning
+            </div>
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/40">
+                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> In Progress
+                    </span>
+                    <span class="text-xs font-code-sm text-blue-300 bg-[#050816] px-2.5 py-1 rounded border border-blue-500/30">AWS Track</span>
+                </div>
+                <div class="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-400/40 flex items-center justify-center mb-4 text-[#60A5FA]">
+                    <span class="material-symbols-outlined text-[28px]">cloud_sync</span>
+                </div>
+                <h3 class="font-headline-lg text-lg font-bold text-white mb-2 group-hover:text-blue-200 transition-colors">
+                    AWS Cloud
+                </h3>
+                <p class="text-slate-300 text-sm font-normal leading-relaxed">
+                    Currently developing AWS and Cloud Engineering knowledge.
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-blue-500/20 flex items-center justify-between text-xs text-blue-300 font-code-sm">
+                <span>Active Mastery Path</span>
+                <span class="flex items-center gap-1 text-cyan-300 font-semibold">In Progress <span class="material-symbols-outlined text-[14px] animate-spin">autorenew</span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= 🎯 CAREER VISION ================= -->
+<section class="mb-section-gap-mobile lg:mb-section-gap py-16 md:py-24 text-center relative fade-up scroll-mt-32" id="vision">
+    <!-- Large subtle blue radial glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#3B82F6]/15 rounded-full blur-[140px] pointer-events-none"></div>
+    
+    <!-- Animated network architecture canvas in background -->
+    <div class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden rounded-3xl opacity-60">
+        <canvas id="career-network-canvas" class="w-full h-full"></canvas>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 backdrop-blur-md mb-6 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+            <span class="text-base">🎯</span>
+            <span class="font-code-sm text-code-sm font-semibold tracking-wider text-blue-300 uppercase">Career Vision</span>
+        </div>
+
+        <h2 class="font-display-lg-mobile md:font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold career-gradient-title mb-8 leading-[1.15] tracking-tight">
+            From learning technology<br class="hidden sm:inline"/> to engineering solutions.
+        </h2>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-[#0D1630]/60 border border-[#1E293B] backdrop-blur-xl max-w-3xl mx-auto shadow-2xl">
+            <p class="font-body-lg text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-normal italic">
+                “My long-term goal is to become a highly capable technology professional combining strong software engineering foundations with cloud computing and cybersecurity expertise.”
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= 🐙 GITHUB SECTION ================= -->
+<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32 fade-up" id="github">
+    <div class="bg-[#0A1024] border border-[#1E293B] rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden shadow-[0_0_40px_rgba(10,16,36,0.8)]">
+        <!-- Radial glow -->
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-8">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+                    <span class="text-base">🐙</span>
+                    <span class="font-code-sm text-code-sm font-semibold tracking-wider text-blue-300 uppercase">GitHub Section</span>
+                </div>
+                <h2 class="font-headline-xl text-headline-xl fluid-headline-xl text-on-surface font-bold tracking-tight">
+                    Open Source. Open Mind.
+                </h2>
+                <p class="text-on-surface-variant max-w-xl mt-3 text-sm md:text-base leading-relaxed">
+                    “I use GitHub to document projects, experiment with technologies, and continuously improve my engineering skills.”
+                </p>
+            </div>
+
+            <!-- Explore Button -->
+            <a href="https://github.com/maleeshayomal" target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3.5 rounded-xl font-label-caps text-label-caps font-semibold inline-flex items-center justify-center gap-2 shrink-0 shadow-[0_0_20px_rgba(77,142,255,0.3)] hover:scale-105 transition-all">
+                Explore My GitHub ↗
+            </a>
+        </div>
+
+        <!-- GitHub-inspired contribution visualization with subtle blue squares -->
+        <div class="bg-[#050816] border border-[#1E293B] rounded-2xl p-5 sm:p-6 overflow-hidden">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px] text-blue-400">commit</span>
+                    <span class="font-headline-lg text-sm font-semibold text-white">Engineering Activity &amp; Commit History</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-slate-400 font-code-sm">
+                    <span>Less</span>
+                    <div class="flex gap-1 items-center">
+                        <span class="contrib-square bg-[#0D1630] border border-[#1E293B]"></span>
+                        <span class="contrib-square bg-[#1E3A8A]"></span>
+                        <span class="contrib-square bg-[#2563EB]"></span>
+                        <span class="contrib-square bg-[#3B82F6]"></span>
+                        <span class="contrib-square bg-[#60A5FA]"></span>
+                    </div>
+                    <span>More</span>
+                </div>
+            </div>
+
+            <!-- Heatmap Container (Scrollable on small devices) -->
+            <div class="overflow-x-auto pb-2">
+                <div id="github-heatmap-grid" class="flex gap-1 min-w-[700px]">
+                    <!-- Dynamically populated with subtle blue squares via JS -->
+                </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-[#1E293B] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                <div class="p-3 rounded-xl bg-[#0D1630]/60 border border-[#1E293B]/60">
+                    <div class="font-headline-lg text-lg font-bold text-white">500+</div>
+                    <div class="text-xs text-slate-400 font-code-sm">Contributions</div>
+                </div>
+                <div class="p-3 rounded-xl bg-[#0D1630]/60 border border-[#1E293B]/60">
+                    <div class="font-headline-lg text-lg font-bold text-cyan-400">15+</div>
+                    <div class="text-xs text-slate-400 font-code-sm">Repositories</div>
+                </div>
+                <div class="p-3 rounded-xl bg-[#0D1630]/60 border border-[#1E293B]/60">
+                    <div class="font-headline-lg text-lg font-bold text-blue-400">Active</div>
+                    <div class="text-xs text-slate-400 font-code-sm">Continuous Streak</div>
+                </div>
+                <div class="p-3 rounded-xl bg-[#0D1630]/60 border border-[#1E293B]/60">
+                    <div class="font-headline-lg text-lg font-bold text-sky-300">100%</div>
+                    <div class="text-xs text-slate-400 font-code-sm">Open Source Mind</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= 📬 CONTACT ================= -->
+<section class="mb-section-gap-mobile lg:mb-section-gap scroll-mt-32 fade-up relative" id="contact">
+    <!-- Large blue/cyan glow behind the heading -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-500/20 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header & WOW Presentation -->
+        <div class="text-center mb-12 relative z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/30 backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+                <span class="text-base">📬</span>
+                <span class="font-code-sm text-code-sm font-semibold tracking-wider text-cyan-300 uppercase">Get In Touch</span>
+            </div>
+            <h2 class="font-headline-xl text-3xl sm:text-5xl md:text-6xl font-extrabold contact-gradient-title mb-4 tracking-tight leading-tight">
+                Have an idea?<br/>Let's build something.
+            </h2>
+            <p class="text-on-surface-variant max-w-xl mx-auto text-base sm:text-lg">
+                “I’m always interested in connecting with developers, recruiters, companies, and technology enthusiasts.”
+            </p>
+
+            <!-- CTA Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+                <!-- Primary CTA: Email Me → (#3B82F6 background) -->
+                <a href="mailto:contact@yomal.dev" class="px-7 py-3.5 rounded-xl font-label-caps text-label-caps font-bold tracking-wider text-white bg-[#3B82F6] hover:bg-blue-600 shadow-[0_0_25px_rgba(59,130,246,0.5)] hover:scale-105 transition-all inline-flex items-center gap-2">
+                    Email Me <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+
+                <!-- Secondary: LinkedIn ↗ (Transparent with blue border) -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl font-label-caps text-label-caps font-bold tracking-wider text-[#60A5FA] bg-transparent border border-[#3B82F6] hover:bg-[#3B82F6]/10 shadow-[0_0_15px_rgba(59,130,246,0.15)] hover:scale-105 transition-all inline-flex items-center gap-2">
+                    LinkedIn ↗
+                </a>
+
+                <!-- Third: GitHub ↗ -->
+                <a href="https://github.com/maleeshayomal" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl font-label-caps text-label-caps font-bold tracking-wider text-slate-200 bg-transparent border border-[#1E293B] hover:border-[#3B82F6] hover:text-white hover:bg-[#3B82F6]/10 transition-all inline-flex items-center gap-2">
+                    GitHub ↗
+                </a>
+            </div>
+        </div>
+
+        <!-- Premium Dark Glass Contact Form -->
+        <div class="glass-card p-6 sm:p-10 md:p-12 rounded-3xl relative overflow-hidden shadow-2xl border border-[#1E293B]">
+            <div class="absolute -top-32 -right-32 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px]"></div>
+            
+            <form class="flex flex-col gap-6 relative z-10">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-label-caps text-label-caps text-slate-300 font-semibold mb-2">Name</label>
+                        <input class="w-full custom-glass-input rounded-xl p-3.5 text-sm font-medium" placeholder="Your Name" type="text" required/>
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-label-caps text-slate-300 font-semibold mb-2">Email</label>
+                        <input class="w-full custom-glass-input rounded-xl p-3.5 text-sm font-medium" placeholder="your.email@example.com" type="email" required/>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-label-caps text-label-caps text-slate-300 font-semibold mb-2">Message</label>
+                    <textarea class="w-full custom-glass-input rounded-xl p-3.5 text-sm font-medium" placeholder="Tell me about your project, idea, or opportunity..." rows="4" required></textarea>
+                </div>
+                <button class="btn-primary py-4 px-8 rounded-xl font-label-caps text-label-caps font-bold tracking-widest mt-2 flex justify-center items-center gap-2 hover:scale-[1.02] shadow-[0_0_20px_rgba(77,142,255,0.3)] transition-all cursor-pointer" type="button">
+                    Send Message →
+                </button>
+            </form>
+        </div>
+    </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="w-full py-section-gap-mobile md:py-section-gap border-t border-outline-variant bg-background">
-<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-base">
-<div class="font-headline-lg text-headline-lg text-primary">YOMAL.</div>
-<div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Source Code</a>
-</div>
-<div class="text-on-surface-variant font-body-md text-body-md text-sm mt-4 md:mt-0">
-                © 2024 Yomal Hettiarachchi. Built with precision.
-            </div>
-</div>
-</footer>
-<script>
-        // Simple intersection observer for fade-up animation
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
 
-            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-        });
-    </script>
+<!-- ================= 🦶 FOOTER ================= -->
+<footer class="w-full py-12 md:py-16 border-t border-[#1E293B] bg-[#050816] relative z-10">
+    <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2">
+            <div class="font-headline-lg text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2">
+                YOMAL. <span class="w-2 h-2 rounded-full bg-[#3B82F6] shadow-[0_0_8px_#3B82F6] inline-block"></span>
+            </div>
+            <p class="text-on-surface-variant text-sm font-medium text-center md:text-left">
+                “Software Engineering Undergraduate building toward what’s next.”
+            </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-[#60A5FA] transition-colors duration-300" href="https://github.com/maleeshayomal" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-[#60A5FA] transition-colors duration-300" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-[#60A5FA] transition-colors duration-300" href="mailto:contact@yomal.dev">Email</a>
+        </div>
+        <div class="text-on-surface-variant font-body-md text-xs sm:text-sm text-center md:text-right">
+            © 2026 Yomal Hettiarachchi. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple intersection observer for fade-up animation
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Populate GitHub Heatmap Grid with subtle blue squares
+        (function() {
+            const grid = document.getElementById('github-heatmap-grid');
+            if (!grid) return;
+            const weeks = 38;
+            const daysPerWeek = 7;
+            const colors = [
+                'bg-[#0D1630] border border-[#1E293B]',
+                'bg-[#1E3A8A]',
+                'bg-[#2563EB]',
+                'bg-[#3B82F6]',
+                'bg-[#60A5FA]'
+            ];
+            for (let w = 0; w < weeks; w++) {
+                const col = document.createElement('div');
+                col.className = 'flex flex-col gap-1';
+                for (let d = 0; d < daysPerWeek; d++) {
+                    const sq = document.createElement('div');
+                    const rand = Math.random();
+                    let level = 0;
+                    if (rand > 0.85) level = 4;
+                    else if (rand > 0.68) level = 3;
+                    else if (rand > 0.45) level = 2;
+                    else if (rand > 0.22) level = 1;
+                    sq.className = `contrib-square ${colors[level]}`;
+                    sq.title = level > 0 ? `${level * 2 + Math.floor(Math.random()*3)} contributions` : 'No contributions';
+                    col.appendChild(sq);
+                }
+                grid.appendChild(col);
+            }
+        })();
+
+        // Career Vision Animated Network Architecture Canvas
+        (function() {
+            const canvas = document.getElementById('career-network-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let nodes = [];
+            const nodeCount = 38;
+            const maxDist = 140;
+
+            function resize() {
+                if (!canvas.parentElement) return;
+                width = canvas.width = canvas.parentElement.clientWidth || 800;
+                height = canvas.height = canvas.parentElement.clientHeight || 400;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * (width || 800),
+                    y: Math.random() * (height || 400),
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    radius: Math.random() * 2 + 1.2,
+                    color: Math.random() > 0.5 ? '#3B82F6' : '#06B6D4'
+                });
+            }
+
+            function animate() {
+                if (!width || !height) {
+                    resize();
+                }
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw connections
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < maxDist) {
+                            const alpha = (1 - dist / maxDist) * 0.35;
+                            ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Draw nodes
+                nodes.forEach(node => {
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    if (node.x < 0 || node.x > width) node.vx *= -1;
+                    if (node.y < 0 || node.y > height) node.vy *= -1;
+
+                    ctx.fillStyle = node.color;
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = node.color;
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                });
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+    });
+</script>
 </body></html>
